@@ -15,7 +15,8 @@ spec:
       values: |
         global:
           domain: ${domain}
-          secretKey: ${secretKey}
+          ingress:
+            inboundCidrs: ${allowed_inbound_cidrs}
   destination:
     server: https://kubernetes.default.svc
     namespace: mcp-gateway-registry

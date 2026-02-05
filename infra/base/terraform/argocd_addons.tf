@@ -243,9 +243,10 @@ resource "kubectl_manifest" "langfuse_secret_yaml" {
 resource "kubectl_manifest" "gitlab_yaml" {
   count = var.enable_gitlab ? 1 : 0
   yaml_body = templatefile("${path.module}/argocd-addons/devops/gitlab/gitlab.yaml", {
-    proxy-real-ip-cidr  = local.vpc_cidr
-    acm_certificate_arn = data.aws_acm_certificate.issued[0].arn
-    domain              = var.acm_certificate_domain
+    proxy-real-ip-cidr    = local.vpc_cidr
+    acm_certificate_arn   = data.aws_acm_certificate.issued[0].arn
+    domain                = var.acm_certificate_domain
+    allowed_inbound_cidrs = var.allowed_inbound_cidrs
   })
 
   depends_on = [
@@ -264,17 +265,12 @@ resource "kubectl_manifest" "milvus_yaml" {
   ]
 }
 
-resource "random_bytes" "mcp_gateway_registry_secret_key" {
-  count  = var.enable_mcp_gateway_registry ? 1 : 0
-  length = 32
-}
-
 # MCP Gateway Registry
 resource "kubectl_manifest" "mcp_gateway_registry_yaml" {
   count = var.enable_mcp_gateway_registry ? 1 : 0
   yaml_body = templatefile("${path.module}/argocd-addons/mcp-gateway-registry.yaml", {
-    domain    = var.acm_certificate_domain
-    secretKey = random_bytes.mcp_gateway_registry_secret_key[0].hex
+    domain                = var.acm_certificate_domain
+    allowed_inbound_cidrs = var.allowed_inbound_cidrs
   })
 
   depends_on = [
