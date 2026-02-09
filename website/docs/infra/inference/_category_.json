@@ -2,7 +2,7 @@
   "label": "Inference",
   "position": 2,
   "link": {
-    "type": "generated-index",
-    "description": "Infrastructure for AI/ML inference workloads"
+    "type": "doc",
+    "id": "infra/inference/index"
   }
 }

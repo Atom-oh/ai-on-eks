@@ -1,5 +1,4 @@
 ---
-sidebar_label: Model Inference Lifecycle
 sidebar_position: 1
 ---
 
