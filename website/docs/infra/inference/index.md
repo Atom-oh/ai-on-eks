@@ -12,8 +12,8 @@ The model inference lifecycle consists of three key phases:
 
 ```mermaid
 graph LR
-    A[Infrastructure Setup] --> B[Model Deployment]
-    B --> C[Optimization]
+    A[<a href='./inference-ready-cluster'>Infrastructure Setup</a>] --> B[<a href='../../blueprints/inference/inference-charts'>Model Deployment</a>]
+    B --> C[<a href='../../guidance/'>Optimization</a>]
     
     style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
     style B fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
