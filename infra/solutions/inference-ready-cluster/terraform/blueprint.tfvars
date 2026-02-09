@@ -7,8 +7,8 @@ solution_description             = "Guidance for Deploying an Inference ready Am
 solution_id                      = "SO9615"
 availability_zones_count         = 4
 enable_soci_snapshotter          = true
-# region                           = "us-west-2"
-# eks_cluster_version              = "1.33"
+region                           = "us-west-2"
+eks_cluster_version              = "1.33"
 
 # -------------------------------------------------------------------------------------
 # EKS Addons Configuration

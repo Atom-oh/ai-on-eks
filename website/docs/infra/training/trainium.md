@@ -1,7 +1,7 @@
 ---
 sidebar_label: Trainium on EKS
 ---
-import CollapsibleContent from '../../src/components/CollapsibleContent';
+import CollapsibleContent from '../../../src/components/CollapsibleContent';
 
 :::warning
 Deployment of ML models on EKS requires access to GPUs or Neuron instances. If your deployment isn't working, it’s often due to missing access to these resources. Also, some deployment patterns rely on Karpenter autoscaling and static node groups; if nodes aren't initializing, check the logs for Karpenter or Node groups to resolve the issue.
@@ -18,7 +18,7 @@ In this blueprint, we will learn how to securely deploy an [Amazon EKS Cluster](
 #### Trianium Device Architecture
 Each Trainium device (chip) comprises two neuron cores. In the case of `Trn1.32xlarge` instances, `16 Trainium devices` are combined, resulting in a total of `32 Neuron cores`. The diagram below provides a visual representation of the Neuron device's architecture:
 
-![Trainium Device](img/neuron-device.png)
+![Trainium Device](../img/neuron-device.png)
 
 #### AWS Neuron Drivers
 Neuron Drivers are a set of essential software components installed on the host operating system of AWS Inferentia-based accelerators, such as Trainium/Inferentia instances. Their primary function is to optimize the interaction between the accelerator hardware and the underlying operating system, ensuring seamless communication and efficient utilization of the accelerator's computational capabilities.
@@ -46,7 +46,7 @@ TorchX can seamlessly integrate with Airflow and Kubeflow Pipelines. In this blu
 
 ### Solution Architecture
 
-![Alt text](img/trainium-on-eks-arch.png)
+![Alt text](../img/trainium-on-eks-arch.png)
 
 
 <CollapsibleContent header={<h2><span>Deploying the Solution</span></h2>}>
@@ -199,7 +199,7 @@ chmod +x 2-bert-pretrain-precompile.sh
 
 You can verify the pods status by running `kubectl get pods` or `kubectl get vcjob`. Successful output looks like below.
 
-![Alt text](img/pre-compile-pod-status.png)
+![Alt text](../img/pre-compile-pod-status.png)
 
 You can also verify the logs for the Pod once they are `Succeeded`. The precompilation job will run for `~15 minutes`. Once complete, you will see the following in the output:
 
@@ -215,7 +215,7 @@ Compiler status PASS
 
 New pre-training cache files are stored under FSx for Lustre.
 
-![Alt text](img/cache.png)
+![Alt text](../img/cache.png)
 
 
 #### Step4: Launch BERT pretraining job using 64 Neuron cores with two trn1.32xlarge instances
@@ -268,7 +268,7 @@ instance-id: i-04b476a6a0e686980
 
 You can also run `neuron-top` which provides the live usage of neuron cores. The below shows the usage of all 32 neuron cores.
 
-![Alt text](img/neuron-top.png)
+![Alt text](../img/neuron-top.png)
 
 
 If you wish to terminate the job, you can execute the following commands:

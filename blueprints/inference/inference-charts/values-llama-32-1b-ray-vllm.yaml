@@ -16,5 +16,6 @@ inference:
     vllmVersion: 0.9.1
     pythonVersion: 3.11
     image:
-      repository: rayproject/ray
+      # repository: rayproject/ray
+      repository: public.ecr.aws/deep-learning-containers/vllm
       tag: 2.47.0-py311

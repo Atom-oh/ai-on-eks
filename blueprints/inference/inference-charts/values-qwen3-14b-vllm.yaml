@@ -1,10 +1,10 @@
-model: meta-llama/Llama-3.2-1B
+model: Qwen/Qwen3-14B
 
 modelParameters:
   maxModelLen: 8192
 
 inference:
-  serviceName: llama-32-1b-vllm
+  serviceName: qwen3-14b-vllm
   serviceNamespace: default
   accelerator: gpu
   framework: vllm
@@ -12,5 +12,6 @@ inference:
   modelServer:
     image:
       repository: public.ecr.aws/deep-learning-containers/vllm
-      # repository: vllm/vllm-openai
-      tag: 0.11.0-gpu-py312-cu128-ubuntu22.04-ec2-v1.7
+      tag: 0.10.2-gpu-py312-ec2
+    deployment:
+      instanceType: g6e.8xlarge
