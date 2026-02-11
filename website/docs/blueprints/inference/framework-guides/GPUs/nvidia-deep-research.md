@@ -3,7 +3,7 @@ title: NVIDIA Enterprise RAG and AI-Q Research Assistant on EKS
 sidebar_position: 9
 ---
 
-import CollapsibleContent from '../../../../src/components/CollapsibleContent';
+import CollapsibleContent from '@site/src/components/CollapsibleContent';
 
 :::warning
 Deployment of Enterprise RAG and AI-Q on EKS requires access to GPU instances (g5, p4, or p5 families). This blueprint relies on [Karpenter](https://karpenter.sh/) autoscaling for dynamic GPU provisioning.
