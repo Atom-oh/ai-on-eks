@@ -206,7 +206,7 @@ While this implementation involves multiple steps, it provides several advantage
 
 The deployment uses Amazon EKS with [Karpenter](https://karpenter.sh/)-based dynamic provisioning:
 
-![NVIDIA AI-Q on EKS](../img/nvidia-deep-research-arch.png)
+![NVIDIA AI-Q on EKS](../../img/nvidia-deep-research-arch.png)
 
 
 ### Enterprise RAG Blueprint Architecture
