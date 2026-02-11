@@ -19,16 +19,16 @@ graph LR
     style B fill:#48bb78,stroke:#333,stroke-width:2px,color:#ffffff
     style C fill:#ed8936,stroke:#333,stroke-width:2px,color:#ffffff
 
-    click A "./inference-ready-cluster" "Go to Inference-Ready Cluster"
+    click A "/docs/infra/inference/inference-ready-cluster" "Go to Inference-Ready Cluster"
     click B "../../blueprints/inference/inference-charts.md" "Go to Inference Charts"
-    click C "../../guidance/" "Go to Guidance"
+    click C "/docs/guidance/" "Go to Guidance"
 ```
 
 Each phase addresses specific challenges and provides the building blocks needed for successful LLM inference at scale.
 
 ---
 
-## [Phase 1: Infrastructure Setup](./inference-ready-cluster)
+## [Phase 1: Infrastructure Setup](/docs/infra/inference/inference-ready-cluster)
 
 ### Why Infrastructure Matters
 
@@ -41,7 +41,7 @@ Before deploying any LLM, you need a robust, scalable infrastructure that can ha
 
 ### Solution: Inference-Ready Cluster
 
-The [**Inference-Ready EKS Cluster**](./inference-ready-cluster) provides a pre-configured infrastructure specifically designed for AI/ML inference workloads.
+The [**Inference-Ready EKS Cluster**](/docs/infra/inference/inference-ready-cluster) provides a pre-configured infrastructure specifically designed for AI/ML inference workloads.
 
 #### What You Get
 
@@ -74,7 +74,7 @@ When setting up your infrastructure, consider:
 
 #### Get Started
 
-Follow the [Inference-Ready Cluster deployment guide](./inference-ready-cluster) to provision your infrastructure.
+Follow the [Inference-Ready Cluster deployment guide](/docs/infra/inference/inference-ready-cluster) to provision your infrastructure.
 
 ---
 
@@ -181,7 +181,7 @@ Explore the [Inference Charts documentation](../../blueprints/inference/inferenc
 
 ---
 
-## [Phase 3: Optimization](../../guidance/)
+## [Phase 3: Optimization](/docs/guidance/)
 
 ### Why Optimization Matters
 
@@ -194,17 +194,17 @@ After deploying your model, optimization ensures:
 
 ### Optimization Techniques
 
-The [**Guidance section**](../../guidance/index.md) provides comprehensive best practices and optimization techniques for production AI/ML workloads. Each technique addresses specific performance or cost challenges:
+The [**Guidance section**](/docs/guidance/index.md) provides comprehensive best practices and optimization techniques for production AI/ML workloads. Each technique addresses specific performance or cost challenges:
 
-#### [Container Startup Time Optimization](../../guidance/container-startup-time/)
+#### [Container Startup Time Optimization](/docs/guidance/container-startup-time/)
 
 Reduce model loading time from minutes to seconds, improving autoscaling responsiveness and development iteration speed.
 
 **Key Techniques**:
-- **[Reduce Image Size](../../guidance/container-startup-time/1-reduce-container-image-size/)**: Optimize container images to minimize pull time
-- **[Decouple Model Artifacts](../../guidance/container-startup-time/1-reduce-container-image-size/14-decoupling-model-artifacts)**: Separate model weights from container images
-- **[Accelerate Pull Process](../../guidance/container-startup-time/2-accelerate-pull-process/)**: Use containerd snapshotters and image pre-fetching
-- **[Pre-fetch on Nodes](../../guidance/container-startup-time/2-accelerate-pull-process/14-prefecthing-images-on-br)**: Warm up nodes with model images before workload scheduling
+- **[Reduce Image Size](/docs/guidance/container-startup-time/1-reduce-container-image-size/)**: Optimize container images to minimize pull time
+- **[Decouple Model Artifacts](/docs/guidance/container-startup-time/1-reduce-container-image-size/14-decoupling-model-artifacts)**: Separate model weights from container images
+- **[Accelerate Pull Process](/docs/guidance/container-startup-time/2-accelerate-pull-process/)**: Use containerd snapshotters and image pre-fetching
+- **[Pre-fetch on Nodes](/docs/guidance/container-startup-time/2-accelerate-pull-process/14-prefecthing-images-on-br)**: Warm up nodes with model images before workload scheduling
 
 **Impact**: Reduces startup time by 60-80%, enabling faster autoscaling and lower costs.
 
@@ -212,7 +212,7 @@ Reduce model loading time from minutes to seconds, improving autoscaling respons
 
 ---
 
-#### [Dynamic Resource Allocation (DRA)](../../guidance/dynamic-resource-allocation)
+#### [Dynamic Resource Allocation (DRA)](/docs/guidance/dynamic-resource-allocation)
 
 Next-generation GPU scheduling for fine-grained resource control and improved utilization.
 
@@ -232,7 +232,7 @@ Next-generation GPU scheduling for fine-grained resource control and improved ut
 
 ---
 
-#### [Observability and Monitoring](../../guidance/observability)
+#### [Observability and Monitoring](/docs/guidance/observability)
 
 Comprehensive visibility into inference workloads for performance optimization and troubleshooting.
 
@@ -253,7 +253,7 @@ Comprehensive visibility into inference workloads for performance optimization a
 
 ---
 
-#### [Networking Optimization](../../guidance/networking)
+#### [Networking Optimization](/docs/guidance/networking)
 
 Optimize network configuration for high-throughput inference workloads.
 
@@ -267,7 +267,7 @@ Optimize network configuration for high-throughput inference workloads.
 
 ---
 
-#### [EKS Best Practices](../../guidance/eks-best-practices)
+#### [EKS Best Practices](/docs/guidance/eks-best-practices)
 
 Comprehensive guides for security, reliability, performance, and cost optimization.
 
@@ -309,7 +309,7 @@ graph TD
 
 #### Get Started
 
-Explore the [Guidance documentation](../../guidance/index.md) to dive deep into each optimization technique.
+Explore the [Guidance documentation](/docs/guidance/index.md) to dive deep into each optimization technique.
 
 ---
 
@@ -368,9 +368,9 @@ kubectl autoscale deployment llama-inference \
 
 Now that you understand the complete model inference lifecycle, choose your starting point:
 
-- **New to EKS?** Start with [Infrastructure Setup](./inference-ready-cluster)
+- **New to EKS?** Start with [Infrastructure Setup](/docs/infra/inference/inference-ready-cluster)
 - **Have Infrastructure?** Jump to [Model Deployment](../../blueprints/inference/inference-charts.md)
-- **Model Running?** Optimize with [Guidance](../../guidance/index.md)
+- **Model Running?** Optimize with [Guidance](/docs/guidance/index.md)
 
 ## Additional Resources
 
