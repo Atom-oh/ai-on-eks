@@ -211,7 +211,7 @@ The deployment uses Amazon EKS with [Karpenter](https://karpenter.sh/)-based dyn
 
 ### Enterprise RAG Blueprint Architecture
 
-![RAG Pipeline with OpenSearch](../img/nvidia-rag-opensearch-arch.png)
+![RAG Pipeline with OpenSearch](../../img/nvidia-rag-opensearch-arch.png)
 
 The [RAG pipeline](https://github.com/NVIDIA-AI-Blueprints/rag) processes documents through multiple specialized NIM microservices:
 
