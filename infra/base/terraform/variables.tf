@@ -169,7 +169,7 @@ variable "enable_kube_prometheus_stack" {
 variable "kube_prometheus_stack_version" {
   description = "Kube Prometheus Stack version"
   type        = string
-  default     = "69.5.2"
+  default     = "82.16.0"
 }
 variable "kube_prometheus_stack_namespace" {
   description = "Namespace for kube-prometheus-stack"
@@ -654,4 +654,56 @@ variable "s3_models_additional_buckets" {
   description = "List of additional S3 bucket names that both service accounts should have access to"
   type        = list(string)
   default     = []
+}
+
+# Gateway API CRDs
+variable "enable_gateway_api_crds" {
+  description = "Enable Gateway API CRDs addon"
+  type        = bool
+  default     = false
+}
+# Gateway API CRDs version
+variable "gateway_api_crds_version" {
+  description = "Gateway API CRDs version"
+  type        = string
+  default     = "1.5.1"
+}
+
+# Gateway API Inference Extension CRDs
+variable "enable_gateway_api_inference_crds" {
+  description = "Enable Gateway API Inference Extension CRDs addon"
+  type        = bool
+  default     = false
+}
+# Gateway API Inference Extension CRDs version
+variable "gateway_api_inference_crds_version" {
+  description = "Gateway API Inference Extension CRDs version"
+  type        = string
+  default     = "1.4.0"
+}
+
+# AgentGateway
+variable "enable_agentgateway" {
+  description = "Enable AgentGateway addon"
+  type        = bool
+  default     = false
+}
+# AgentGateway version
+variable "agentgateway_version" {
+  description = "AgentGateway chart version"
+  type        = string
+  default     = "1.0.0"
+}
+
+# Istio
+variable "enable_istio" {
+  description = "Enable Istio addon"
+  type        = bool
+  default     = false
+}
+# Istio version
+variable "istio_version" {
+  description = "Istio version"
+  type        = string
+  default     = "1.29.1"
 }
